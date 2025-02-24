@@ -1,5 +1,7 @@
 package ru.ifellow.JSchool.introdution;
 
+import java.util.Arrays;
+
 public class FirstSteps {
 
     public int sum (int x, int y){
@@ -27,7 +29,7 @@ public class FirstSteps {
     }
 
     public boolean isInsideRect(int xLeft, int yTop, int xRight, int yBottom, int x, int y){
-        return xLeft <= x  && x <= xRight && yBottom <= y && y <= yTop;
+        return xLeft <= x && x <= xRight && yTop <= y && y <= yBottom;
     }
 
     public int sum(int[] array){
@@ -65,7 +67,7 @@ public class FirstSteps {
         return min;
     }
 
-    public int max(int[] array){
+    public  int max(int[] array){
         int max = Integer.MIN_VALUE;
 
         for (int i = 0; i < array.length; i++) {
@@ -150,7 +152,9 @@ public class FirstSteps {
         int max = Integer.MIN_VALUE;
 
         for (int i = 0; i < matrix.length; i++) {
-            max = max(matrix[i]);
+            if (max < max(matrix[i])) {
+                max = max(matrix[i]);
+            }
         }
 
         return max;
